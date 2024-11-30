@@ -17,6 +17,7 @@ export const App = () => {
   const currentTab =
     visibleGoods.find(visibleGood => visibleGood.id === activeTabId) ||
     visibleGoods[0];
+  // const set = id => onTabSelected(id);
 
   return (
     <div className="section">
@@ -24,11 +25,9 @@ export const App = () => {
 
       <div data-cy="TabsComponent">
         <Tabs
-          goods={visibleGoods}
-          currentTab={currentTab}
-          set={id => {
-            onTabSelected(id);
-          }}
+          tabs={visibleGoods}
+          activeTabId={activeTabId}
+          onTabSelected={id => onTabSelected(id)}
         />
       </div>
 
